@@ -2,6 +2,7 @@ using Mdb.Core;
 using Mdb.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Mdb.DAL;
 
@@ -36,5 +37,14 @@ public class UserRepository(IDbFactory dbFactory) : IUserRepository
     {
         var user = await _users.FindAsync(u => u.Id == id);
         return await user.SingleOrDefaultAsync();
+    }
+
+    public async Task<List<User>> SearchAsync(string search)
+    {
+        return await _users.AsQueryable()
+            .Where(u =>
+                u.LastName.Contains(search, StringComparison.CurrentCultureIgnoreCase)
+                || u.FirstName.Contains(search, StringComparison.CurrentCultureIgnoreCase))
+            .ToListAsync();
     }
 }

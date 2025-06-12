@@ -73,6 +73,14 @@ api.MapGet("/{userId:guid}", async (IUserRepository userRepository, Guid userId)
         : Results.Ok(result);
 });
 
+api.MapGet("/search/{searchTerm}", async (IUserRepository userRepository, string searchTerm) =>
+{
+    var result = await userRepository.SearchAsync(searchTerm);
+    return result is null || result.Count == 0
+        ? Results.NotFound()
+        : Results.Ok(result);
+}).WithOpenApi();
+
 
 await app.RunAsync();
 

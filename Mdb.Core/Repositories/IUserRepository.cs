@@ -7,6 +7,7 @@ public interface IUserRepository
     Task CreateAsync(User user);
     Task UpdateAsync(User user);
     Task DeleteAsync(Guid userId);
+    Task<List<User>> SearchAsync(string search);
     public Task<User?> GetByAsync(Guid id);
     IAsyncEnumerable<User>? GetAllAsync();
 }

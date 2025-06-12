@@ -1,0 +1,6 @@
+@Mdb_HostAddress = http://localhost:5101
+
+GET {{Mdb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

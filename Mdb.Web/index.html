@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Регистрация и учет пользователей</h1>
+    </header>
+    <main>
+      <section class="form-section">
+        <form id="userForm">
+
+          <div>
+            <label for="firstName">Имя</label>
+            <input type="text" id="firstName" required autocomplete="off">
+          </div>
+
+          <div>
+            <label for="lastName">Фамилия</label>
+            <input type="text" id="lastName" required autocomplete="off">
+          </div>
+
+          <div>
+            <label for="age">Возраст</label>
+            <input type="text" id="age" required autocomplete="off">
+          </div>
+
+          <button type="submit" id="submitButton">Отправить</button>
+
+        </form>
+      </section>
+
+      <section class="output-section">
+        <h2>Список пользователей</h2>
+        <ul id="userList"></ul>
+      </section>
+
+      <section class="search-section">
+        <h2>Поиск пользователей</h2>
+        <form role="search">
+          <input type="search" id="searchField" name="search"
+            placeholder="Поиск" autocomplete="off">
+          <button type="button" id="searchButton">Найти</button>
+          <button type="button" id="clearSearchButton">Очистить</button>
+        </form>
+        <ul id="userSearchList"></ul>
+      </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

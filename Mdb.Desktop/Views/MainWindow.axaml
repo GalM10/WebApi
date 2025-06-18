@@ -1,0 +1,110 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Mdb.Desktop.ViewModels"
+        x:Class="Mdb.Desktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel">
+
+    <Window.Styles>
+        <StyleInclude Source="/Styles/MainStyles.axaml"/>
+    </Window.Styles>
+    <ScrollViewer>
+        <StackPanel Background="#f5f5f5">
+            <Border Height="100" Classes="headerBorder">
+                <TextBlock Text="Регистрация и учет пользователей"
+                           Classes="headerTextBlock"/>
+            </Border>
+            <StackPanel Orientation="Horizontal">
+                <Border Classes="baseBorder authBorder">
+                    <StackPanel>
+                        <Label Content="Имя" />
+                        <TextBox Classes="authTextBox" 
+                                 x:Name="FirstName"
+                                 Text="{Binding FirstName}"/>
+                        <Label Content="Фамилия"/>
+                        <TextBox Classes="authTextBox" 
+                                 x:Name="LastName"
+                                 Text="{Binding LastName}"/>
+                        <Label Content="Возраст"/>
+                        <TextBox Classes="authTextBox" 
+                                 x:Name="Age"
+                                 Text="{Binding Age}"/>
+                        <Button Content="Отправить"
+                                Classes="baseButton bottomButton"
+                                Command="{Binding AddUserCommand}"/>
+                    </StackPanel>
+                </Border>
+                <Border Classes="baseBorder listUsersBorder">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Список пользователей"
+                                       Classes="baseGreenTextBlock"/>
+                            <Button Command="{Binding  RefreshUsersCommand}"
+                                    Classes="refreshButton">
+                                <PathIcon Data="{StaticResource arrow_counterclockwise_regular}"/>
+                            </Button>
+                        </StackPanel>
+                        <Separator/>
+                        <ScrollViewer Height="300" VerticalScrollBarVisibility="Hidden">
+                            <ListBox 
+                                ItemsSource="{Binding Users}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding SelectedUser}"
+                                x:Name="ListBox">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ColumnDefinitions="*,0.2*">
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                                <TextBlock Text="{Binding FirstName}" Margin="5 0 0 0 "/>
+                                                <TextBlock Text="{Binding LastName}" Margin="5 0 0 0 "/>
+                                                <TextBlock Text="{Binding Age}" Margin="5 0 0 0 "/>
+                                            </StackPanel>
+                                            
+                                            <Button Classes="deleteUserButton" 
+                                                    Grid.Column="1"
+                                                    Content="Удалить"
+                                                    Command="{Binding  #ListBox.((vm:MainWindowViewModel)DataContext).DeleteUserCommand}"
+                                                    CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <Border Classes="baseBorder searchUsersBorder">
+                    <StackPanel>
+                        <TextBlock Text="Поиск пользователей"
+                                   Classes="baseGreenTextBlock"/>
+                        <Separator/>
+                        <TextBox Watermark="Поиск" 
+                                 Text="{Binding SearchText}"
+                                 Classes="searchTextBox"/>
+                        <ScrollViewer Height="200" VerticalScrollBarVisibility="Hidden">
+                            <ListBox ItemsSource="{Binding SearchResults}"
+                                     x:Name="SearchListBox">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding FirstName}" Margin="5 0 0 0 "/>
+                                            <TextBlock Text="{Binding LastName}" Margin="5 0 0 0 "/>
+                                            <TextBlock Text="{Binding Age}" Margin="5 0 0 0 "/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                            
+                        
+                        <Button Content="Очистить"
+                                Command="{Binding ClearSearchCommand}"
+                                Classes="baseButton bottomButton"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+        
+    
+</Window>

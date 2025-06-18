@@ -1,0 +1,147 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="Border.headerBorder">
+        <Setter Property="Background" Value="#188504"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+    
+    <Style Selector="Border.baseBorder">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="20"/>
+    </Style>
+    <Style Selector="TextBlock">
+        <Setter Property="FontFamily" Value="JetBrains Mono"/>
+        <Setter  Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style Selector="TextBlock.headerTextBlock">
+        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Label">
+        <Setter Property="FontFamily" Value="JetBrains Mono"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#555555"/>
+    </Style>
+    
+    <Style Selector="Border.authBorder">
+        <Setter Property="Margin" Value="300 20 20 20"/>
+        <Setter Property="Width" Value="635"/>
+        <Setter Property="MinWidth" Value="400"/>
+    </Style>
+    <Style Selector="Border.listUsersBorder">
+        <Setter Property="Margin" Value="20 20 300 20"/>
+        <Setter Property="Width" Value="635"/>
+        <Setter Property="MinWidth" Value="400"/>
+    </Style>
+    <Style Selector="Border.searchUsersBorder">
+        <Setter Property="Margin" Value="300 0 300 0"/>
+        <Setter Property="MinWidth" Value="800"/>
+        <Setter Property="Width" Value="1310"/>
+    </Style>
+    
+    <Style Selector="TextBox.authTextBox">
+        <Setter Property="Margin" Value="0 0 0 20"/>
+        <Setter Property="BorderBrush" Value="#f4a00f"/>
+        <Setter Property="Background" Value="#ffeac4"/>
+        
+    </Style>
+    <Style Selector="TextBox.searchTextBox">
+        <Setter Property="BorderBrush" Value="Silver"/>
+    </Style>
+    
+    <Style Selector="TextBlock.baseGreenTextBlock">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#188504"/>
+    </Style>
+    
+    <Style Selector="Separator">
+        <Setter Property="Background" Value="#188504"/>
+        <Setter Property="Height" Value="2"/>
+        <Setter Property="Margin" Value="0 10 0 10"/>
+    </Style>
+    
+    <Style Selector="Button.baseButton">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Background" Value="#188504"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="38"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    
+    <Style Selector="Button.bottomButton">
+        <Setter Property="Margin" Value="0 20 0 0 "/>
+    </Style>
+    
+    <Style Selector="Button.deleteUserButton">
+        <Setter Property="Background" Value="#e89908"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="CornerRadius" Value="5"/>
+    </Style>
+    <Style Selector="Button.refreshButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Style Selector="^:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </Style>
+    <Style Selector="ListBox ListBoxItem">
+                <Setter Property="Padding"
+                        Value="10" />
+                <Setter Property="FontSize"
+                        Value="15" />
+                <Setter Property="Foreground"
+                        Value="#323232" />
+                <Setter Property="CornerRadius"
+                        Value="9"/>
+                <Setter Property="Height"
+                        Value="60"/>
+                <Setter Property="FontFamily"
+                        Value="JetBrains Mono" />
+                <Setter Property="Margin"
+                        Value="5, 10" />
+                <Setter Property="Background"
+                        Value="#d3fad1" />
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="ListBox">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="SelectionMode" Value="Single"/>
+                <Setter Property="Margin" Value="0 20 0  20"/>
+        </Style>
+
+        <Style Selector="ListBox ListBoxItem /template/ ContentPresenter">
+                <Setter Property="Background"
+                        Value="Transparent"/>
+                <Setter Property="Foreground"
+                        Value="#323232" />
+        </Style>
+        <Style Selector="ListBox ListBoxItem:selected /template/ ContentPresenter">
+                <Setter Property="Background"
+                        Value="#d3fad1"/>
+                <Setter Property="Foreground"
+                        Value="#323232" />
+        </Style>
+        <Style Selector="ListBox ListBoxItem:pointerover /template/ ContentPresenter">
+                <Setter Property="Background"
+                        Value="#d3fad1" />
+                <Setter Property="Foreground"
+                        Value="#323232" />
+        </Style>
+        
+        <Style Selector="TextBlock.exitFromChatTextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="JetBrains Mono"/>
+                <Setter Property="Foreground" Value="Silver"/>
+        </Style>
+        
+</Styles>

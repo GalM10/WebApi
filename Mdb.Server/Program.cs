@@ -79,7 +79,7 @@ api.MapGet("/search/{searchTerm}", async (IUserRepository userRepository, string
     return result is null || result.Count == 0
         ? Results.NotFound()
         : Results.Ok(result);
-}).WithOpenApi();
+});
 
 
 await app.RunAsync();
